@@ -1,19 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controller/productController");
+const { checkIfLoggedIn } = require("../utils/checkIfLoggedIn");
 
 router
   .route("/")
-  .post(productController.createProduct)
+  .post(checkIfLoggedIn, productController.createProduct)
   .get(productController.getAllProducts);
 
 router
   .route("/:id")
   .get(productController.getProductById)
-  .put(productController.updateProduct)
-  .delete(productController.deleteProduct);
+  .put(checkIfLoggedIn, productController.updateProduct)
+  .delete(checkIfLoggedIn, productController.deleteProduct);
 
 module.exports = router;
+
+// Products
 
 // const { v4: uuidv4 } = require("uuid");
 

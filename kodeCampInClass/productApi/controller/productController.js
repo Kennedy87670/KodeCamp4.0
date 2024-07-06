@@ -5,7 +5,9 @@ exports.createProduct = async (req, res) => {
     const productDetails = req.body;
     const product = await Product.create({
       productName: productDetails.productName,
+      productDescription: productDetails.description,
       productPrice: productDetails.productPrice,
+      productOwner: productDetails.userId,
     });
     res.status(201).json({
       status: "success",
