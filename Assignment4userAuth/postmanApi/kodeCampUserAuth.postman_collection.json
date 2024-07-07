@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "d09ea724-2301-4c4d-8afc-1d399ea2bd66",
+		"name": "kodeCampUserAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30360854",
+		"_collection_link": "https://www.postman.com/cryosat-architect-81250468/workspace/kodecampuserauth/collection/30360854-d09ea724-2301-4c4d-8afc-1d399ea2bd66?action=share&source=collection_link&creator=30360854"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "forgotPassword",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "resetPassword",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "profileView",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
