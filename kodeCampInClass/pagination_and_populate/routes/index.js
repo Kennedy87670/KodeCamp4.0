@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const {
+  createProduct,
+  getProducts,
+  getProductById,
+  updateProduct,
+  deleteProduct,
+} = require("../controller/productController");
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.route("/").post(createProduct).get(getProducts);
+router
+  .route("/:id")
+  .get(getProductById)
+  .put(updateProduct)
+  .delete(deleteProduct);
 
 module.exports = router;
