@@ -160,6 +160,7 @@ exports.resetPassword = async (req, res) => {
 
     // Update the user's password and save
     user.password = hashedPassword;
+    // user.password = newPassword;
     await user.save();
     console.log("Password updated in the database.");
 
