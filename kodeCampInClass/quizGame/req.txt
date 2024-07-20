@@ -1,0 +1,13 @@
+{
+    "fullName":"admin",
+    "email": "admin@admin.com",
+    "password": "admin",
+    "role":"admin"
+}
+
+{
+    "fullName":"boy",
+    "email": "boy@boy.com",
+    "password": "boy"
+    
+}

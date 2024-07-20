@@ -1,5 +1,5 @@
 const activeQuizModel = require("../models/activeQuizModel");
-const quizHistoryModel = require("../models/quizHistoryModel");
+const quizHistoryModel = require("../models/quizHistoryModel")
 const quizModel = require("../models/quizModel");
 
 exports.quizById = async (req, res) => {

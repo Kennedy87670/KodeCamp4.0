@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
-const activeQuizSchema = new mongoose.Schema(
+const quizHistoryModel
+
+ = new mongoose.Schema(
   {
     score: {
       type: Number,
@@ -17,14 +20,15 @@ const activeQuizSchema = new mongoose.Schema(
 
       required: true,
     },
-    user: {
-      type: mongoose.Types.ObjectId,
-      ref: "userModel",
-      required: true,
-    },
+   
 
     questions: {
       type: Array,
+      required: true,
+    },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "userModel",
       required: true,
     },
   },
@@ -33,4 +37,7 @@ const activeQuizSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("activeQuiz", activeQuizSchema);
+quizHistoryModel.plugin(mongoosePaginate)
+
+module.exports = mongoose.model("activeQuiz", quizHistoryModel 
+);
