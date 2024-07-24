@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "testAuth": "jest .__test/authTest.test"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cloudinary": "^2.3.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -15,14 +17,19 @@
     "express": "^4.19.2",
     "express-async-handler": "^1.2.0",
     "http-errors": "~1.6.3",
+    "jest": "^29.7.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
     "mongoose-paginate-v2": "^1.8.2",
     "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
     "nodemon": "^3.1.4",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
   }
 }

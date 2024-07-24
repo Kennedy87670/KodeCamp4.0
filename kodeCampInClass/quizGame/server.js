@@ -8,10 +8,12 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const createError = require("http-errors");
 const swaggerSetup = require("./swagger");
+const cloudinary = require('cloudinary');
 
 const adminRouter = require("./routes/admin");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const sharedRouter = require("./routes/shared")
 
 const app = express();
 
@@ -22,10 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+cloudinary.config({ 
+  cloud_name:process.env.cloud_name ,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret
+});
+
 // Routes setup
 app.use("/v1/auth", authRouter);
 app.use("/v1/admin", adminRouter);
 app.use("/v1/users", usersRouter);
+app.use("/v1/shared", sharedRouter )
 
 
 // Setup Swagger

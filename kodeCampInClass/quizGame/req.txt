@@ -11,3 +11,96 @@
     "password": "boy"
     
 }
+
+
+{
+    "questionNumber": "1",
+    "question": "A baby lion is called?",
+    "optionA": "Cob",
+    "optionB": "Baby lion",
+    "optionC": "Lioness",
+    "optionD": "Lion baby",
+    "correctOption": "optionA"
+}
+
+{
+    "questionNumber": "2",
+    "question": "What is the capital of France?",
+    "optionA": "Berlin",
+    "optionB": "Madrid",
+    "optionC": "Paris",
+    "optionD": "Rome",
+    "correctOption": "optionC"
+},
+{
+    "questionNumber": "3",
+    "question": "Which planet is known as the Red Planet?",
+    "optionA": "Earth",
+    "optionB": "Mars",
+    "optionC": "Jupiter",
+    "optionD": "Venus",
+    "correctOption": "optionB"
+},
+{
+    "questionNumber": "4",
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "optionA": "Harper Lee",
+    "optionB": "Mark Twain",
+    "optionC": "F. Scott Fitzgerald",
+    "optionD": "Ernest Hemingway",
+    "correctOption": "optionA"
+},
+{
+    "questionNumber": "5",
+    "question": "What is the largest mammal in the world?",
+    "optionA": "Elephant",
+    "optionB": "Blue Whale",
+    "optionC": "Giraffe",
+    "optionD": "Great White Shark",
+    "correctOption": "optionB"
+},
+{
+    "questionNumber": "6",
+    "question": "In which year did the Titanic sink?",
+    "optionA": "1912",
+    "optionB": "1915",
+    "optionC": "1920",
+    "optionD": "1905",
+    "correctOption": "optionA"
+},
+{
+    "questionNumber": "7",
+    "question": "What is the hardest natural substance on Earth?",
+    "optionA": "Gold",
+    "optionB": "Iron",
+    "optionC": "Diamond",
+    "optionD": "Platinum",
+    "correctOption": "optionC"
+},
+{
+    "questionNumber": "8",
+    "question": "Which element has the chemical symbol 'O'?",
+    "optionA": "Oxygen",
+    "optionB": "Osmium",
+    "optionC": "Oganesson",
+    "optionD": "Olmium",
+    "correctOption": "optionA"
+},
+{
+    "questionNumber": "9",
+    "question": "What is the smallest country in the world?",
+    "optionA": "Monaco",
+    "optionB": "Nauru",
+    "optionC": "San Marino",
+    "optionD": "Vatican City",
+    "correctOption": "optionD"
+},
+{
+    "questionNumber": "10",
+    "question": "Who painted the Mona Lisa?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Leonardo da Vinci",
+    "optionC": "Pablo Picasso",
+    "optionD": "Claude Monet",
+    "correctOption": "optionB"
+}
