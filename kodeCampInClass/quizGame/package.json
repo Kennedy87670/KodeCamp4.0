@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "testAuth": "jest .__test/authTest.test"
+    "testAuth": "jest .__test/authTest.test",
+    "testAdmin": "jest .__test/admin.test.",
+    "testUser": "jest .__test/user.test."
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -25,6 +27,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
     "nodemon": "^3.1.4",
+    "socket.io": "^4.7.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^10.0.0"

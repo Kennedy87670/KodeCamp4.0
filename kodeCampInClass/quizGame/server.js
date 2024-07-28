@@ -17,6 +17,22 @@ const sharedRouter = require("./routes/shared")
 
 const app = express();
 
+
+
+// app.get("/emit-an-event", (req, res)=>{
+//   try {
+//     req.originalUrl.send("Hello this is an event fired from the emit-an-event endpoint")
+//   res.status(200).json({
+//     message: "Event emitted"
+//   })
+//   } catch (error) {
+//     res.status(500).json({
+//       message:"Internal server error"
+//     })
+//   }
+
+// })
+
 // Middleware setup
 app.use(logger("dev"));
 app.use(express.json());

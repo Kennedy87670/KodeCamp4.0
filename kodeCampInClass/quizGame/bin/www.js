@@ -7,6 +7,7 @@
 const app = require('../server');
 const debug = require('debug')('quizapp:server');
 const http = require('http');
+const { Server } = require("socket.io");
 
 /**
  * Get port from environment and store in Express.
@@ -21,10 +22,50 @@ app.set('port', port);
  */
 
 const server = http.createServer(app);
+const io = new Server(server);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
+
+app.use((req, res, next)=>{
+  req.io = io;
+  next();
+})
+
+io.on("connection", (socket) => {
+  socket.emit("connection_response", "Welcome you are connected and this is your ID"+ socket.id)
+  console.log(" A server was created with IO Socket. The connection ID is " + socket.id);
+
+  socket.on("disconnect", ()=>{
+    console.log("A user has disconnected. the User ID is"+  socket.id);
+
+  })
+
+  socket.on("greet", (grettingMessage)=>{
+    console.log("Here is a greeting to you", grettingMessage);
+    socket.send("The server has received your greeting.......")
+    socket.send("And i want tot thank you for greeting me")
+  })
+});
+
+
+
+app.get("/emit-an-event", (req, res)=>{
+  try {
+    req.originalUrl.send("Hello this is an event fired from the emit-an-event endpoint")
+  res.status(200).json({
+    message: "Event emitted"
+  })
+  } catch (error) {
+    res.status(500).json({
+      message:"Internal server error"
+    })
+  }
+
+})
+
+
 
 server.listen(port, ()=> {
   console.log("Server started on port", port);
@@ -93,4 +134,4 @@ function onListening() {
 }
 
 
-module.exports= server;
+module.exports = { server, io };

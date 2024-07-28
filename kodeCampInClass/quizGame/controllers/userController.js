@@ -11,10 +11,10 @@ exports.getQuestion = async function (req, res, next) {
   
     const quiz = await quizModel.findOne({ questionNumber }, "-correctOption -createdAt -updatedAt");
   
-    res.json({
+ 
+    res.status(200).json({
       quiz
-    });
-  
+     });
   }
 
 exports.answerQuestion = async function (req, res, next) {
@@ -34,8 +34,10 @@ exports.answerQuestion = async function (req, res, next) {
       quiz, optionChosen, user: req.userDetails.userId
     });
   
-    res.send({
-      message: "Answer recorded"
+  
+
+    res.status(200).json({
+     message: "Answer recorded"
     });
   }
 
@@ -77,7 +79,7 @@ exports.answerQuestion = async function (req, res, next) {
     const activeQuiz = await activeQuizModel.find({ user: req.userDetails.userId }).populate("quiz", "-questionNumber");
   
     let totalMarks = 0;
-    let totalAnsweredQuetions = activeQuiz.length;
+    let totalAnsweredQuestions = activeQuiz.length;
     let totalCorrectQuestions = 0;
     let totalIncorrectQuestions = 0;
   
@@ -100,12 +102,22 @@ exports.answerQuestion = async function (req, res, next) {
   
     await activeQuizModel.deleteMany({ user: req.userDetails.userId })
   
-    res.send({
+
+
+    res.status(200).json({
+     
+      message: "Successful",
       totalMarks,
-      totalAnsweredQuetions,
+      totalAnsweredQuestions,
       totalCorrectQuestions,
       totalIncorrectQuestions
     });
+    // res.send({
+    //   totalMarks,
+    //   totalAnsweredQuestions,
+    //   totalCorrectQuestions,
+    //   totalIncorrectQuestions
+    // });
   }
 
 exports.quizHistory = async function (req, res, next) {
