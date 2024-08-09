@@ -1,4 +1,3 @@
-
 // server.js
 require("dotenv").config();
 const express = require("express");
@@ -9,7 +8,6 @@ const logger = require("morgan");
 const createError = require("http-errors");
 const swaggerSetup = require("./swagger");
 
-// const adminRouter = require("./routes/admin");
 const usersRouter = require("./routes/userRoutes");
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/productRoutes");
@@ -30,15 +28,13 @@ app.use("/v1/products", productRouter);
 app.use("/v1/orders", orderRouter);
 app.use("/v1/users", usersRouter);
 
-
 // Setup Swagger
 swaggerSetup(app);
 
 // Root route handler
-app.get('/', (req, res) => {
-  res.send('Welcome to the E-commerce API');
+app.get("/", (req, res) => {
+  res.send("Welcome to the E-commerce API");
 });
-
 
 // Error handling
 app.use((req, res, next) => {
@@ -51,7 +47,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.json({
     message: res.locals.message,
-    error: res.locals.error
+    error: res.locals.error,
   });
 });
 
@@ -63,7 +59,7 @@ app.all("*", (req, res) => {
   });
 });
 
-
+// Connect to MongoDB
 mongoose
   .connect(process.env.DATABASE)
   .then(() => {
